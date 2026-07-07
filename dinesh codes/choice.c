@@ -4,6 +4,7 @@ char account_holder[1000][25];
 int balance[1000];
 void menu();
 void createaccount();
+#define ERROR_ID 
 
 void menu()
 {
@@ -16,6 +17,7 @@ void menu()
     printf("\tPress 5. to Check Balance.\n");
     printf("\tPress 6. to Exit.\n");
 }
+
 void createaccount()
 {
     int i = 0;
@@ -25,9 +27,8 @@ void createaccount()
         int len;
         int check = 1;
         printf("\tEnter 11 digit account number: ");
-        scanf("%s", accountnumber);
-        len = strlen(accountnumber);
-        if (len != 11)
+        scanf("11%s", accountnumber);
+        if (strlen(accountnumber) != 11)
         {
             printf("\tInvalid! Enter exactly 11 digits.\n");
             continue;
@@ -103,11 +104,14 @@ void createaccount()
                 while (getchar() != '\n');
                 continue;
             }
+            do{
             if (deposit < 500 || deposit > 100000)
             {
                 printf("\tAmount must be between 500 and 100000.\n");
-                continue;
+                break;
             }
+            }while(deposit < 500 || deposit > 100000);
+            
             balance[i]=deposit;
             printf("\ttransaction sucessfully..\n");
             break; 
