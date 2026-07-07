@@ -18,8 +18,13 @@ int main(){
         case 2 :
             /*.......................not completed file.......................*/
             /*one function is done*/
+        case default :
+            printf("enter number between 1 to 6 \n");
+            break;
         
-    }
+    }while(choice>=1 && choic<=6);
+}
+
     
 void menu()
 {
