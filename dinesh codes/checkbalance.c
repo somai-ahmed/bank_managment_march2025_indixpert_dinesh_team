@@ -1,5 +1,6 @@
- 
- 
+#include "createaccount.c" 
+/*declare this file for account_no*/
+
 
 void checkbalance(); 
 
