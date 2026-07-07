@@ -13,42 +13,46 @@ void checkbalance()
 {
  
     char accountnumber[12];
+    int check ;
     while (1)
     {
-        do{
-        printf("\tEnter 11 digit account number: ");
-        scanf("%s", accountnumber);
+           check = 1 ;
+       
+           printf("\tEnter 11-digit account number: ");
+           scanf("%11s", accountnumber); /*for digit count*/
+       
+           /* Checking the length of input account number */
+           if (strlen(accountnumber) != 11)
+           {
+               printf("\tInvalid! Enter exactly 11 digits.\n");
+               check = 0;
+               continue;
+           }
+       
+           /* Check that every character is a digit */
+           for (int j = 0; j < 11; j++)
+           {
+               if (!isdigit((unsigned char)accountnumber[j]))
+               {
+                   printf("\tInvalid! Use digits only.\n");
+                   check = 0;
+                   break;
+               }
+           }
+       
+           if (!check)
+               continue;
+       
+           /* Reject if all numbers are zeros */
+           if (strcmp(accountnumber, "00000000000") == 0)
+           {
+               printf("\tInvalid account number!\n");
+               check = 0;
+           }
+       
+       } while (!check);
+                
 
-        if (strlen(accountnumber) != 11)
-        {
-            perror("\tInvalid! Enter exactly 11 digits.\n");
-        }
-        }while(strlen(accountnumber) != 11);
-/* Adding a while loop to repeatedly prompt the user until a valid account number is entered */
- /*Using perror() to display an error message whenever the entered account number
-   does not contain exactly 11 digits before asking for the input again*/
-
-        int check = 1;
-        for (int j = 0; j < 11; j++)
-        {
-            if (!isdigit(accountnumber[j]))
-            {
-                check = 0;
-                break;
-            }
-        }
-
-        if (!check)
-        {
-            printf("\tInvalid! Use digits only.\n");
-            continue;
-        }
-        if(strcmp(accountnumber,"0000000000"))
-        {
-            printf("\t invalid digit.!\n");
-            continue;
-
-        }
 
         int checkaccount = 0;
         for (int i = 0; i < 1000; i++)
