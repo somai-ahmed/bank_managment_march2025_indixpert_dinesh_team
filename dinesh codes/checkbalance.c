@@ -57,7 +57,7 @@ void checkbalance()
         int checkaccount = 0;
         for (int i = 0; i < 1000; i++)
         {
-            if (account_no[i][0] != '\0' && strcmp(account_no[i], accountnumber) == 0)
+            if (account_no[i][0] != '\0' && strcmp(account_no[i], accountnumber) == 0) /*account_no not declared , i don't know even the context */
             {
                 printf("\n\t\tNote: Please ensure user has correct details.\n\n");
                 printf("\tAccount Number : %s\n", account_no[i]);
