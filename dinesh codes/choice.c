@@ -4,12 +4,7 @@ char account_holder[1000][25];
 int balance[1000];
 void menu();
 void createaccount();
-int main()
-{
-    menu();
-     
-    return 0;
-}
+
 void menu()
 {
     printf("\t......WELCOME.......\n");
