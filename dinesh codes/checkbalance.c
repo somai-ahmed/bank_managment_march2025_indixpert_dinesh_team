@@ -11,17 +11,22 @@ int main()
 
 void checkbalance()
 {
+ 
     char accountnumber[12];
     while (1)
     {
+        do{
         printf("\tEnter 11 digit account number: ");
         scanf("%s", accountnumber);
 
         if (strlen(accountnumber) != 11)
         {
-            printf("\tInvalid! Enter exactly 11 digits.\n");
-            continue;
+            perror("\tInvalid! Enter exactly 11 digits.\n");
         }
+        }while(strlen(accountnumber) != 11);
+/* Adding a while loop to repeatedly prompt the user until a valid account number is entered */
+ /*Using perror() to display an error message whenever the entered account number
+   does not contain exactly 11 digits before asking for the input again*/
 
         int check = 1;
         for (int j = 0; j < 11; j++)
