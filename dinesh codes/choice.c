@@ -6,6 +6,21 @@ void menu();
 void createaccount();
 #define ERROR_ID 
 
+int main(){
+    int choice ;
+    menu();
+    do{
+    scanf("%d",&choice);
+    switch(choice){
+        case 1 : 
+            createaccount();
+            break ;
+        case 2 :
+            /*.......................not completed file.......................*/
+            /*one function is done*/
+        
+    }
+    
 void menu()
 {
     printf("\t......WELCOME.......\n");
