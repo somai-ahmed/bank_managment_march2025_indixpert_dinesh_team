@@ -17,7 +17,7 @@ void checkbalance()
     while (1)
     {
            check = 1 ;
-       
+           do{
            printf("\tEnter 11-digit account number: ");
            scanf("%11s", accountnumber); /*for digit count*/
        
